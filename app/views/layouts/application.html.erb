@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="superheader">
+    <div id="title"><p>Streammie</p></div>
+    <div id="options">
+      <p>
+        grid size:
+        <select name="user">
+          <option value="1" selected="selected">1x1</option>
+          <option value="2">2x2</option>
+          <option value="3">4x4</option>
+        </select>
+      </p>
+    </div>
+    <div id="logo-ib"><p>
+      <%= image_tag( 'logoib.png' ) %>
+    </p></div>
+  </div>
+  
+  <div id="supercontent">
+    <%= yield %>
+  </div>
+  
+  <div id="superfooter">
+    <div id="streammie-copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia LTDA</div>
+  </div>
 </body>
 </html>

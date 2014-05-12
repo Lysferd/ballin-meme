@@ -1,3 +1,18 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#video_grid {
+  margin: 5px 5px;
+  #border: 1px solid;
+  text-align: center;
+}
+
+#dev {
+  margin: 0px 25px;
+  border: 1px dotted;
+  padding: 2px;
+  background-color: #5ca028;
+  font-size: small;
+}
+
