@@ -11,7 +11,11 @@ class HomeController < ApplicationController
   end
   
   def rtsp
-    return "TEST"
+    @test = 'test'
+    respond_to do |format|
+      format.html { redirect_to home_live_path }
+      format.js
+    end
   end
 
 end

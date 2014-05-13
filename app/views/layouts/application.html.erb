@@ -8,28 +8,24 @@
 </head>
 <body>
   <div id="superheader">
-    <div id="title"><p>Streammie</p></div>
-    <div id="options">
-      <p>
-        grid size:
-        <select name="user">
-          <option value="1" selected="selected">1x1</option>
-          <option value="2">2x2</option>
-          <option value="3">4x4</option>
-        </select>
-      </p>
-    </div>
-    <div id="logo-ib"><p>
-      <%= image_tag( 'logoib.png' ) %>
+    <div id="title">Streammie</div>
+    <div id="login"><p><br/>
+      usuário:
+      <input />
+      senha:
+      <input />
+      <button>Login</button>
     </p></div>
+    <div id="logo-ib"><%= image_tag( 'logoib.png' ) %></div>
   </div>
   
-  <div id="supercontent">
-    <%= yield %>
-  </div>
+  <div id="supercontent"><%= yield %></div>
   
   <div id="superfooter">
-    <div id="streammie-copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia LTDA</div>
+    <div id="copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia LTDA</div>
+    <div id="qpclogo"><%= image_tag( 'logoqpc.png' ) %></div>
+    <div id="admins"><a href="<%= login_path %>"><%= image_tag( 'key.png' ) %></a></div>
+    <div id="contact"><%= image_tag( 'mail.png' ) %></div>
   </div>
 </body>
 </html>

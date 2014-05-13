@@ -3,5 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 #$(window).unload -> $.ajax(url: "home/login")
-$(window).load ->
-  $.ajax(url: 'rtsp').done (html) -> $('#video_grid').append html
+#$('#add_button').click -> alert 'test'
+#(window).load ->
+#  $.ajax(url: 'rtsp').done (html) -> $('#video_grid').append html
+
+
+#$ ->
+  #$.ajax().done (html) -> alert html
+  #$('#add_button').click -> $('#video_grid').append "<div class='viewer'>TEST</div>"

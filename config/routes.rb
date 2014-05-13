@@ -5,10 +5,7 @@ BallinMeme::Application.routes.draw do
   resources :cameras
 
   get 'home/live'
-  get 'rtsp', to: 'home#rtsp'
-  get 'home/hls'
-
-  get 'home/login'
+  get 'home/login', as: 'login'
   
   root 'home#live'
 

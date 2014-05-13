@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :close_vlc
+  helper_method :rtsp_url
 
   ENCODER = %w( ffmpeg x264 )[1]
 
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
   
   def rtp_method( port = 8080 ) #use random between 30000 and 40000?
-    "#rtp{ dst=#{get_ip_address}, sdp=rtsp://#{get_ip_address}:#{port}/live.sdp }"
+    return "#rtp{ dst=#{get_ip_address}, sdp=rtsp://#{get_ip_address}:#{port}/live.sdp }"
   end
   
   def hls_method( segs = 5, vcodec = 'mp4', brate = 256, fps = 32, w = 640, h = 480 )
@@ -51,6 +51,10 @@ class ApplicationController < ActionController::Base
            #            "fps=#{fps}," +
            #            "width=#{w}," +
            #            "height=#{h} }"
+  end
+
+  def rtsp_url
+    return "rtsp://#{get_ip_address}:8080/live.sdp"
   end
 
 end
