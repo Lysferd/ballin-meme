@@ -1,5 +1,9 @@
 BallinMeme::Application.routes.draw do
 
+  resources :users
+
+  resources :cameras
+
   get 'home/live'
   get 'rtsp', to: 'home#rtsp'
   get 'home/hls'
