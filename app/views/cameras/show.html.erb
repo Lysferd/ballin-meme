@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @camera.ip_address %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @camera.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @camera.password %>
+</p>
+
+<%= link_to 'Edit', edit_camera_path(@camera) %> |
+<%= link_to 'Back', cameras_path %>
