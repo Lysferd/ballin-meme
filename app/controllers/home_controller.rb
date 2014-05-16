@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   
-  def index
+  def live
     #spawn_process
     @camera_ip = '192.168.1.33'
     @camera_index = 33
