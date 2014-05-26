@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
   end
 
   def rtsp_url
-    return "rtsp://#{get_ip_address}:8080/live.sdp"
+    return "rtsp://#{get_ip_address}:8080/live33.sdp"
   end
 
 end

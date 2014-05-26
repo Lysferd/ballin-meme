@@ -1,5 +1,11 @@
 <div id='video_grid'>
-  <%= render 'hls' %>
+  <% if browser.ios? %>
+    HLS
+    <%= render 'hls' %>
+  <% else %>
+    RTSP
+    <%= render 'rtsp' %>
+  <% end %>
 </div>
 <br/>
 <% if Rails.env == 'development' %>
