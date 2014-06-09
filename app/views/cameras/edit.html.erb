@@ -1,6 +1,8 @@
-<h1>Editing camera</h1>
+<div id='sform'>
+  <div class='title'>Editing camera</div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @camera %> |
-<%= link_to 'Back', cameras_path %>
+  <div class='actions'><%= button_to 'Show', @camera, method: :get %></div>
+  <div class='actions'><%= button_to 'Back', cameras_path, method: :get %></div>
+</div>

@@ -6,18 +6,23 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
+  <strong>Hashed password:</strong>
+  <%= @user.hashed_password %>
+</p>
+
+<p>
+  <strong>Salt:</strong>
+  <%= @user.salt %>
+</p>
+
+<p>
+  <strong>Camera whitelist:</strong>
+  <%= @user.camera_whitelist %>
 </p>
 
 <p>
   <strong>Is admin:</strong>
   <%= @user.is_admin %>
-</p>
-
-<p>
-  <strong>Allowed cameras:</strong>
-  <%= @user.allowed_cameras %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

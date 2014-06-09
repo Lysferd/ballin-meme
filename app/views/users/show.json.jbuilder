@@ -1,1 +1,1 @@
-json.extract! @user, :id, :username, :password_digest, :is_admin, :allowed_cameras, :created_at, :updated_at
+json.extract! @user, :id, :username, :hashed_password, :salt, :camera_whitelist, :is_admin, :created_at, :updated_at

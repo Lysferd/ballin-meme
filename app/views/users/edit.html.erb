@@ -1,6 +1,12 @@
-<h1>Editing user</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div id='sform'>
+  <div class='title'>Editing user</div>
+  
+  <%= render 'form' %>
+  
+  <div class='actions'>
+    <%= button_to 'Show', @user, method: :get %>
+  </div>
+  <div class='actions'>
+    <%= button_to 'Back', users_path, method: :get %>
+  </div>
+</div>

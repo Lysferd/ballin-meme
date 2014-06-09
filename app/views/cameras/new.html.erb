@@ -1,5 +1,7 @@
-<h1>New camera</h1>
+<div id='sform'>
+  <div class='title'>New camera</div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', cameras_path %>
+  <div class='actions'><%= button_to 'Back', cameras_path, method: :get %></div>
+</div>

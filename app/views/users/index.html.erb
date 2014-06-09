@@ -1,15 +1,14 @@
-<h1>Listing users</h1>
+<div id='stable'>
+
+<div class='title'>Listing users</div>
 
 <table>
   <thead>
     <tr>
       <th>Username</th>
-      <th>Password digest</th>
-      <th>Is admin</th>
-      <th>Allowed cameras</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Camera Whitelist</th>
+      <th>Administrator?</th>
+      <th colspan=2>Options</th>
     </tr>
   </thead>
 
@@ -17,10 +16,14 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.username %></td>
-        <td><%= user.password_digest %></td>
+        <td>
+          <% unless user.camera_whitelist.empty? %>
+            <%= user.camera_whitelist %>
+          <% else %>
+            <%= 'All cameras' %>
+          <% end %>
+        </td>
         <td><%= user.is_admin %></td>
-        <td><%= user.allowed_cameras %></td>
-        <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= button_to 'New User', new_user_path, method: :get %>
+
+</div>

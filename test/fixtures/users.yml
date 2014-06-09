@@ -2,12 +2,14 @@
 
 one:
   username: MyString
-  password_digest: MyString
+  hashed_password: MyString
+  salt: MyString
+  camera_whitelist: MyString
   is_admin: false
-  allowed_cameras: MyString
 
 two:
   username: MyString
-  password_digest: MyString
+  hashed_password: MyString
+  salt: MyString
+  camera_whitelist: MyString
   is_admin: false
-  allowed_cameras: MyString

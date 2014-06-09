@@ -1,24 +1,23 @@
-<h1>Listing cameras</h1>
+<div id='stable'>
+
+<div class='title'>Listing cameras</div>
 
 <table>
   <thead>
     <tr>
-      <th>Ip address</th>
+      <th>TCP/IPv4 Address</th>
       <th>Username</th>
       <th>Password</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th colspan=2>Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @cameras.each do |camera| %>
       <tr>
-        <td><%= camera.ip_address %></td>
+        <td><%= camera.ipv4 %></td>
         <td><%= camera.username %></td>
         <td><%= camera.password %></td>
-        <td><%= link_to 'Show', camera %></td>
         <td><%= link_to 'Edit', edit_camera_path(camera) %></td>
         <td><%= link_to 'Destroy', camera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -28,4 +27,6 @@
 
 <br>
 
-<%= link_to 'New Camera', new_camera_path %>
+<%= button_to 'New Camera', new_camera_path, method: :get %>
+
+</div>

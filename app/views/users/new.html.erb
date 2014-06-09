@@ -1,5 +1,19 @@
-<h1>New user</h1>
+<div id="tips_box">
+  <div id="title">Tips</div>
+  <div id="fields">Username:</div>
+  <p>Up to 4 (four) numeric characters.</p>
+  <div id="fields">Password:</div>
+  <p>Up to 8 (eight) numerical characters.</p>
+  <div id="fields">Confirm:</div>
+  <p>Repeat the password for confirmation.</p>
+  <div id="fields">Camera whitelist:</div>
+  <p>List of cameras that this user can view (id1|1d2). Empty for all cameras.</p>
+</div>
 
-<%= render 'form' %>
+<div id='sform'>
+  <div class='title'>New user</div>
 
-<%= link_to 'Back', users_path %>
+  <%= render 'form' %>
+
+  <div class='actions'><%= button_to 'Back', users_path, method: 'get' %></div>
+</div>

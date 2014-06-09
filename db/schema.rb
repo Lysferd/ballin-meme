@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513183509) do
+ActiveRecord::Schema.define(version: 20140527163737) do
+
+  create_table "cameras", force: true do |t|
+    t.string   "ipv4"
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
-    t.string   "password_digest"
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.string   "camera_whitelist"
     t.boolean  "is_admin"
-    t.string   "allowed_cameras"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  
   def live
     #spawn_process
     @local_ip = '192.168.1.39:3000'
@@ -19,5 +18,4 @@ class HomeController < ApplicationController
       format.js
     end
   end
-
 end

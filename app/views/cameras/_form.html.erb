@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ip_address %><br>
-    <%= f.text_field :ip_address %>
+    <%= f.label :ipv4, 'TCP/IPv4 Address' %><br>
+    <%= f.text_field :ipv4 %>
   </div>
   <div class="field">
     <%= f.label :username %><br>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :password %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
   <div class="actions">
     <%= f.submit %>

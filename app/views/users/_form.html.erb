@@ -11,21 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" data-tip="test">
     <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, size: 4 %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password, size: 8 %>
   </div>
   <div class="field">
-    <%= f.label :is_admin %><br>
+    <%= f.label :password_confirmation, 'Confirm' %><br>
+    <%= f.password_field :password_confirmation, size: 8 %>
+  </div>
+  <div class="field">
+    <%= f.label :camera_whitelist %><br>
+    <%= f.text_field :camera_whitelist %>
+  </div>
+  <div class="field">
+    <%= f.label :is_admin, 'Check if administrator' %>:
     <%= f.check_box :is_admin %>
-  </div>
-  <div class="field">
-    <%= f.label :allowed_cameras %><br>
-    <%= f.text_field :allowed_cameras %>
   </div>
   <div class="actions">
     <%= f.submit %>

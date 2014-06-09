@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.order( :username )
   end
 
   # GET /users/1
@@ -28,11 +28,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
+        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
+        format.xml { render xml: @user, status: :created, location: @user }
       else
         format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.xml { render xml: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,8 +42,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully updated." }
+        format.json { head :ok }
       else
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password_digest, :is_admin, :allowed_cameras)
+      params.require(:user).permit(:username, :password, :password_confirmation, :salt, :camera_whitelist, :is_admin)
     end
 end
