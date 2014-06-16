@@ -4,12 +4,10 @@ one:
   username: MyString
   hashed_password: MyString
   salt: MyString
-  camera_whitelist: MyString
   is_admin: false
 
 two:
   username: MyString
   hashed_password: MyString
   salt: MyString
-  camera_whitelist: MyString
   is_admin: false

@@ -13,20 +13,20 @@
  */
 
 #superheader {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 16%;
-  background-color: #9991FF;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:8%;
+  background-color:#9991FF;
   font-family: Verdana, Geneva, sans-serif;
-  font-variant: small-caps;
+  font-variant:small-caps;
   color: #FFF;
-  
+   
   /* Application title style */
   #title {
     float: left;
-    padding-top: 26px;
+    padding-top: 15px;
     padding-left: 30px;
     margin-right: 18px;
     width: auto;
@@ -37,20 +37,21 @@
   #logo-ib {
     float: right;
     padding-right: 30px;
-    padding-top: 18px;
+    padding-top: 8px;
     height: 100%;
 
     img {
-      width: 101px;
-      height: 69px;
+      width: 56px;
+      height: 40px;
     }
   }
   
-  #login p {
+  #login {
     float: left;
+    padding-top: 4px;
     padding-left: 32px;
     float-size: 10px;
-    text-align: center;
+    text-align: left;
   }
 
   #options p {
@@ -58,15 +59,48 @@
     padding-left: 32px;
     float-size: 10px;
   }
+  
+  .button_to {
+	display: inline;
+  }
+
+  .button_to div {
+	display: inline;
+  }
 }
 
 #supercontent {
-  position: absolute;
-  left: 0px;
-  top: 16%;
-  width: 100%;
-  height: 74%;
+  position:absolute;
+  left:0px;
+  top:8%;
+  width:100%;
+  height:86%;
   background-color: #2419B2;
+  overflow: auto;
+  
+  /*PAY ATTENTION - duplicated or trash- remove if this strategy wasnt used */
+  
+  .button_to {
+    display: inline;
+  }
+
+  .button_to div {
+    display: inline;
+  }
+  
+  #to_center {
+    position: relative;
+    width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-right:auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    color: #FFF;
+    text-align: center;
+  }
+  
+  /*ends here*/
   
   #alert {
     text-align: center;
@@ -80,13 +114,26 @@
     font-weight: bold;
   }
   
+  #notice {
+    text-align: center;
+    margin: 15px;
+    border: 1px dotted;
+    padding: 5px;
+    background-color: #00ff00;
+    color: #000000;
+    
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
   /* ==========================================================================
      INDEX PAGE BEGIN
   ========================================================================== */
   #logo-palazzo {
     position: relative;
     margin: 0px auto;
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: center;
 
     img {
@@ -278,17 +325,17 @@
 }
 
 #superfooter {
-  position: absolute;
-  left: 0px;
-  top: 90%;
-  width: 100%;
-  height: 10%;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  height:6%;
   background-color: #0F0A4A;
 
   #copyrights {
     float: left;
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 12px;
     width: 478px;
     height: 20px;
     font-family: Verdana, Geneva, sans-serif;
@@ -298,40 +345,40 @@
 
   #qpclogo {
     float: right;
-    margin-top: 10px;
-    width: 48px;
-    height: 48px;
+    margin-top: 4px;
+    width: 29px;
+    height: 29px;
     padding-right: 10px;
     
     img {
-      width: 48px;
-      height: 48px;
+      width: 29px;
+      height: 29px;
     }
   }
 
   #admins {
     float: right;
-    margin-top: 20px;
-    width: 30px;
-    height: 30px;
+    margin-top: 7px;
+    width: 24px;
+    height: 24px;
     padding-right: 10px;
 
     img {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
     }
   }
 
   #contact {
     float: right;
-    margin-top: 20px;
-    width: 38px;
-    height: 30px;
+    margin-top: 7px;
+    width: 30px;
+    height: 24px;
     padding-right: 10px;
 
     img {
-      width: 38px;
-      height: 30px;
+      width: 30px;
+      height: 24px;
     }
   }
 }

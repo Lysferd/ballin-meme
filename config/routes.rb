@@ -1,17 +1,10 @@
 
 BallinMeme::Application.routes.draw do
   
-  root 'home#live'
-  get 'admin' => 'home#admin'
-  
-  #get 'rtsp' => 'home#rtsp'
-  #get 'hls' => 'home#hls'
-  
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-  end
+  root   'home#live'
+  get    'admin'  => 'home#admin'
+  post   'login'  => 'home#create'
+  delete 'logout' => 'home#destroy'
   
   resources :cameras
   resources :users

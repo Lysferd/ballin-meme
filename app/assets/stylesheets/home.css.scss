@@ -4,7 +4,6 @@
 
 #video_grid {
   margin: 5px 5px;
-  border: 1px solid;
   text-align: center;
 
   #viewer {
@@ -15,33 +14,41 @@
     width: 320px;
     height: 240px;
     background-color: #0F0A4A;
-  }
+    
+    #viewerbar {
+      float: right;
+      margin-bottom: 16px;
+      width: 100%;
+      height: 24px;
+      background-color: #9991FF;
+      
+      #titleview {
+        float: left;
+        margin-left: 2px;
+        margin-top: 2px;
+        font-size: 16px;
+        text-align: left;
+        font-family: Verdana, Geneva, sans-serif;
+        font-variant: small-caps;
+        color: #FFF;
+      }
 
-  #viewerbar {
-    float: right;
-    margin-bottom: 16px;
-    width: 100%;
-    height: 24px;
-    background-color: #9991FF;
-  }
-
-  .titleview {
-    float: left;
-    margin-left: 2px;
-    margin-top: 2px;
-    font-size: 16px;
-    text-align: left;
-    font-family: Verdana, Geneva, sans-serif;
-    font-variant: small-caps;
-    color: #FFF;
-  }
-
-  #barbutton {
-    float: right;
-    margin-top: 2px;
-    margin-right: 2px;
-    width: auto;
-    height: auto;
+      #barbutton {
+        float: right;
+        margin-top: 2px;
+        margin-right: 2px;
+        width: auto;
+        height: auto;
+        
+        :hover {
+          filter: brightness(2);
+        }
+        
+        :active {
+          -webkit-filter: brightness(0.2);
+        }
+      }
+    }
   }
 
   #spacer { // fixme

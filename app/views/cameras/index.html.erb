@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Label</th>
       <th>TCP/IPv4 Address</th>
       <th>Username</th>
       <th>Password</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @cameras.each do |camera| %>
       <tr>
+        <td><%= camera.label %></td>
         <td><%= camera.ipv4 %></td>
         <td><%= camera.username %></td>
         <td><%= camera.password %></td>
@@ -27,6 +29,7 @@
 
 <br>
 
-<%= button_to 'New Camera', new_camera_path, method: :get %>
+<%= button_to( t( :new_camera ), new_camera_path, method: :get ) %>
+<%= button_to( t( :back ), admin_path, method: :get ) %>
 
 </div>

@@ -7,7 +7,7 @@
     <tr>
       <th>Username</th>
       <th>Camera Whitelist</th>
-      <th>Administrator?</th>
+      <th>Privilege</th>
       <th colspan=2>Options</th>
     </tr>
   </thead>
@@ -17,13 +17,9 @@
       <tr>
         <td><%= user.username %></td>
         <td>
-          <% unless user.camera_whitelist.empty? %>
-            <%= user.camera_whitelist %>
-          <% else %>
-            <%= 'All cameras' %>
-          <% end %>
+          <%= 'All cameras' %>
         </td>
-        <td><%= user.is_admin %></td>
+        <td><%= user.is_admin ? 'Administrator' : 'Viewer' %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -33,6 +29,7 @@
 
 <br>
 
-<%= button_to 'New User', new_user_path, method: :get %>
+<%= button_to( t( :new_user ), new_user_path, method: :get ) %>
+<%= button_to( t( :back ), admin_path, method: :get ) %>
 
 </div>

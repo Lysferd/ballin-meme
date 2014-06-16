@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  username:   "Username"
+  password:   "Password"
+  login:      "Login"
+  logging:    "Logging in..."
+  logout:     "Logout"
+  cameras:    "Cameras"
+  add:        "Add camera"
+  welcome:    "Welcome"
+  back:       "Back"
+  new_user:   "New User"
+  new_camera: "New Camera"

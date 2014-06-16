@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Streammie</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="superheader">
-    <div id="title">Streammie</div>
-    <% unless session[:user_id] %>
-      <div id="login"><p><br/>
-        usuário:
-        <input />
-        senha:
-        <input type='password' />
-        <button>Login</button>
-      </p></div>
-    <% else %>
-      Logout
-    <% end %>
-    <div id="logo-ib"><%= image_tag( 'logoib.png' ) %></div>
-  </div>
   
-  <div id="supercontent">
-    <%= yield %>
-  </div>
+  <head>
+    <title>Streammie</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
   
-  <div id="superfooter">
-    <div id="copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia & Sistemas LTDA</div>
-    <div id="qpclogo"><%= image_tag( 'logoqpc.png' ) %></div>
-    <div id="admins"><a href="<%= session[:user_id] ? admin_url : login_url %>"><%= image_tag( 'key.png' ) %></a></div>
-    <div id="contact"><a href="mailto:fabioalmeida@ibtecnologia.com.br"><%= image_tag( 'mail.png' ) %></a></div>
-  </div>
-</body>
+  <body>
+    <div id="superheader">
+      <div id="title">Streammie</div>
+      <div id="login">
+        <% if session[:user_id] %>
+          <%= t( :welcome ) %>, <strong><%= User::find( session[:user_id] ).username rescue 'NIL' %></strong>
+          <%= button_to( t( :logout ), logout_url, method: :delete ) %>
+          <br />
+          <%= form_tag do %>
+            <div class="field">
+              <%= label_tag( :cameras_list, t( :cameras ) ) %>:
+              <%= select_tag :select_camera, options_from_collection_for_select( Camera::all, 'id', 'label' ) %>
+              <%= button_tag( t(:add ) ) %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div id="logo-ib"><%= image_tag( 'logoib.png' ) %></div>
+    </div>
+    
+    <div id="supercontent">
+      <%= yield %>
+      
+      <% unless session[:user_id] %>
+        <div id="to_center">
+          <%= form_tag( 'login' ) do %>
+            <div class='field'>
+              <%= label_tag( :username, t( :username ) ) %><br>
+              <%= text_field_tag( :username, params[:username] ) %>
+            </div>
+            <div class='field'>
+              <%= label_tag( :password, t( :password ) ) %><br>
+              <%= password_field_tag( :password, params[:password] ) %>
+            </div>
+            <div class='actions'>
+              <%= submit_tag( t( :login ), data: { disable_with: t( :logging ) }  ) %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div id="superfooter">
+      <div id="copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia & Sistemas LTDA</div>
+      <div id="qpclogo"><%= image_tag( 'logoqpc.png' ) %></div>
+      <div id="admins"><a href="<%= session[:user_id] ? admin_url : login_url %>"><%= image_tag( 'key.png' ) %></a></div>
+      <div id="contact"><a href="mailto:fabioalmeida@ibtecnologia.com.br"><%= image_tag( 'mail.png' ) %></a></div>
+    </div>
+  </body>
 </html>
