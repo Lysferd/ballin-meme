@@ -24,6 +24,14 @@
     <%= f.password_field :password_confirmation, size: 8 %>
   </div>
   <div class="field">
+    <% @a = []; 100.times { |n| @a << [ "CAMERA-#{n}", n ] }; @a.flatten %>
+    <%= f.label :cameras, 'Cameras' %><br>
+    <%= f.select :cameras, @a, multiple: true %>
+    <select multiple name="interests" size="4">
+      <%= options_for_select @a %>
+    </select>
+  </div>
+  <div class="field">
     <%= f.label :is_admin, 'Check if administrator' %>:
     <%= f.check_box :is_admin %>
   </div>

@@ -3,6 +3,7 @@ BallinMeme::Application.routes.draw do
   
   root   'home#live'
   get    'admin'  => 'home#admin'
+  get    'mobile' => 'home#mobile'
   post   'login'  => 'home#create'
   delete 'logout' => 'home#destroy'
   

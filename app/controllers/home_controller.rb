@@ -9,9 +9,9 @@ class HomeController < ApplicationController
       session[:user_id] = user.id
       
       # spawn VLC processes
-      user.cameras.each do |camera|
-        @vlc.summon( 'hls', camera.username, camera.password, camera.ipv4 )
-      end
+      # user.cameras.each do |camera|
+        # @vlc.summon( 'hls', camera.username, camera.password, camera.ipv4 )
+      # end
       
       if user.is_admin
         redirect_to( admin_url )
@@ -26,7 +26,7 @@ class HomeController < ApplicationController
   def destroy
     session[:user_id] = nil
     
-    @vlc.terminate
+    # @vlc.terminate
     
     redirect_to( root_url, notice: 'Logged out' )
   end

@@ -1,13 +1,8 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionController::TestCase
-  test "should get hls" do
-    get :hls
-    assert_response :success
-  end
-
-  test "should get rtsp" do
-    get :rtsp
+  test "should get mobile" do
+    get :mobile
     assert_response :success
   end
 

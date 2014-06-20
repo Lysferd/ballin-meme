@@ -30,24 +30,6 @@
     
     <div id="supercontent">
       <%= yield %>
-      
-      <% unless session[:user_id] %>
-        <div id="to_center">
-          <%= form_tag( 'login' ) do %>
-            <div class='field'>
-              <%= label_tag( :username, t( :username ) ) %><br>
-              <%= text_field_tag( :username, params[:username] ) %>
-            </div>
-            <div class='field'>
-              <%= label_tag( :password, t( :password ) ) %><br>
-              <%= password_field_tag( :password, params[:password] ) %>
-            </div>
-            <div class='actions'>
-              <%= submit_tag( t( :login ), data: { disable_with: t( :logging ) }  ) %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
     </div>
     
     <div id="superfooter">

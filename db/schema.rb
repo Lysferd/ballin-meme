@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140609155605) do
     t.string   "username"
     t.string   "hashed_password"
     t.string   "salt"
+    t.string   "cameras"
     t.boolean  "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
