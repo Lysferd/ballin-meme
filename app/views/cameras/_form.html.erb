@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :label %><br>
+    <%= f.label :label, t(:camera_label) %><br>
     <%= f.text_field :label %>
   </div>
   <div class="field">
-    <%= f.label :ipv4, 'TCP/IPv4 Address' %><br>
+    <%= f.label :ipv4, t(:camera_address) %><br>
     <%= f.text_field :ipv4 %>
   </div>
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :username, t(:username) %><br>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
+    <%= f.label :password, t(:password) %><br>
     <%= f.password_field :password %>
   </div>
   <div class="actions">

@@ -2,14 +2,16 @@
 BallinMeme::Application.routes.draw do
   
   root   'home#live'
+  get    'live'   => 'home#live'
+  post   'add_camera'   => 'home#add_camera'
   get    'admin'  => 'home#admin'
-  get    'mobile' => 'home#mobile'
+  get    'mobile' => 'mobile#index'
   post   'login'  => 'home#create'
   delete 'logout' => 'home#destroy'
   
   resources :cameras
   resources :users
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

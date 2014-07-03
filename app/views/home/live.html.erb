@@ -1,47 +1,47 @@
+
 <% if flash[:alert] %>
-  <div id='alert'>
+  <div id="alert" title="Click to close">
     Error: <%= flash[:alert] %>
   </div>
 <% end %>
 
 <% if flash[:notice] %>
-  <div id='notice'>
+  <div id="notice" title="Click to close">
     Notice: <%= flash[:notice] %>
   </div>
 <% end %>
 
 <% if session[:user_id] %>
-  
-  <% if browser.ios? %>
-    <%= render 'hls' %>
-  <% else %>
-    <%= render 'rtsp' %>
-  <% end %>
+
+  <div id="informative">
+    <%= image_tag( "uparrow.png", width: 309, height: 214 ) %>
+    <p>select a camera from the list above in order to view it.</p>
+  </div>
+  <div id="video_grid"></div>
   
 <% else %>
-
-  <div id="logo-palazzo">
-    <%= image_tag( 'logopalazzo.png' ) %>
-    <p>para utilizar este serviço por favor insira suas informações na área de login e senha</p>
+  
+  <div id="informative">
+    <%= image_tag( "logopalazzo.png", width: 591, height: 244 ) %>
+    <p><%=t :login_intel %></p>
   </div>
-  <div id="to_center">
-    <%= form_tag( 'login' ) do %>
-      <div class='field'>
-        <%= label_tag( :username, t( :username ) ) %><br>
-        <%= text_field_tag( :username, params[:username] ) %>
-      </div>
-      <div class='field'>
-        <%= label_tag( :password, t( :password ) ) %><br>
-        <%= password_field_tag( :password, params[:password] ) %>
-      </div>
-      <div class='actions'>
-        <%= submit_tag( t( :login ), data: { disable_with: t( :logging ) }  ) %>
-      </div>
-    <% end %>
-  </div>
+  <%= form_tag( "login" ) do %>
+    <div id="title">Login</div>
+    <div class="field">
+      <%= label_tag( :username, t( :username ) ) %><br>
+      <%= text_field_tag( :username, params[:username] ) %>
+    </div>
+    <div class="field">
+      <%= label_tag( :password, t( :password ) ) %><br>
+      <%= password_field_tag( :password, params[:password] ) %>
+    </div>
+    <div class="actions">
+      <%= submit_tag( t( :login ), data: { disable_with: t( :logging ) }  ) %>
+    </div>
+  <% end %>
 
 <% end %>
 
-<% if Rails.env == 'development' %>
-  <%#= render 'devintel' %>
+<% if Rails.env == "development" %>
+  <%#= render "devintel" %>
 <% end %>

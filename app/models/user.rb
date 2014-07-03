@@ -19,9 +19,7 @@ class User < ActiveRecord::Base
   class << self
     def authenticate( username, password )
       if user = find_by_username( username )
-        if user.hashed_password == encrypt_password( password, user.salt )
-          user
-        end
+        user if user.hashed_password == encrypt_password( password, user.salt )
       end
     end
 
@@ -46,5 +44,4 @@ class User < ActiveRecord::Base
   def generate_salt
     self.salt = self.object_id.to_s + rand.to_s
   end
-
 end

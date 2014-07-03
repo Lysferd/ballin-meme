@@ -1,35 +1,32 @@
-<div id='stable'>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
-<div class='title'>Listing users</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Camera Whitelist</th>
-      <th>Privilege</th>
-      <th colspan=2>Options</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<div id="supertable">
+  <div id="title">Listing users</div>
+  <table>
+    <thead>
       <tr>
-        <td><%= user.username %></td>
-        <td>
-          <%= 'All cameras' %>
-        </td>
-        <td><%= user.is_admin ? 'Administrator' : 'Viewer' %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Username</th>
+        <th>Camera Whitelist</th>
+        <th>Privilege</th>
+        <th colspan=2>Options</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= button_to( t( :new_user ), new_user_path, method: :get ) %>
-<%= button_to( t( :back ), admin_path, method: :get ) %>
-
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.cameras.empty? ? "All cameras" : user.cameras.gsub( "|", ", " ) %></td>
+          <td><%= user.is_admin ? "Administrator" : "Viewer" %></td>
+          <td><%= link_to "Edit", edit_user_path(user) %></td>
+          <td><%= link_to "Destroy", user, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= button_to t(:new_user), new_user_path, method: :get %>
+  <%= button_to t(:back), admin_path, method: :get %>
 </div>

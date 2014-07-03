@@ -45,9 +45,5 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'passenger'
-
 gem 'browser'
-
-gem 'posix-spawn'
-
-gem 'vlc'
+gem 'streammie'
