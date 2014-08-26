@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @raspi.label %>
+</p>
+
+<p>
+  <strong>Ipv4:</strong>
+  <%= @raspi.ipv4 %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @raspi.user %>
+</p>
+
+<%= link_to 'Edit', edit_raspi_path(@raspi) %> |
+<%= link_to 'Back', raspis_path %>

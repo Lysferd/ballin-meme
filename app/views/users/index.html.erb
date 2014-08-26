@@ -4,14 +4,14 @@
 
 
 <div id="supertable">
-  <div id="title">Listing users</div>
+  <div id="title"><%=t :user_list %></div>
   <table>
     <thead>
       <tr>
-        <th>Username</th>
-        <th>Camera Whitelist</th>
-        <th>Privilege</th>
-        <th colspan=2>Options</th>
+        <th><%=t :username %></th>
+        <th><%=t :camera_whitelist %></th>
+        <th><%=t :user_privilege %></th>
+        <th colspan=2><%=t :options %></th>
       </tr>
     </thead>
 
@@ -21,8 +21,8 @@
           <td><%= user.username %></td>
           <td><%= user.cameras.empty? ? "All cameras" : user.cameras.gsub( "|", ", " ) %></td>
           <td><%= user.is_admin ? "Administrator" : "Viewer" %></td>
-          <td><%= link_to "Edit", edit_user_path(user) %></td>
-          <td><%= link_to "Destroy", user, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <td><%= link_to( t( :edit ), edit_user_path(user) ) %></td>
+          <td><%= link_to( t( :destroy ), user, method: :delete, data: { confirm: "Are you sure?" } ) %></td>
         </tr>
       <% end %>
     </tbody>

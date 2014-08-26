@@ -1,7 +1,2 @@
-<div id='sform'>
-  <div class='title'>New camera</div>
-
-  <%= render 'form' %>
-
-  <div class='actions'><%= button_to 'Back', cameras_path, method: :get %></div>
-</div>
+<%= render( "tips" ) %>
+<%= render( "form", title: :new_camera ) %>

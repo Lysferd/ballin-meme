@@ -1,0 +1,31 @@
+
+<div id="supertable">
+  <div id="title"><%=t :title_admin_panel %></div> 
+  
+  <table style="table-layout: fixed">
+    <tr>
+      <td><%= link_to( t(:users), users_url ) %></td>
+      <td><%= link_to( t(:cameras), cameras_url ) %></td>
+      <td><%= link_to( t(:raspis), raspis_url ) %></td>
+    </tr>
+  </table>
+</div>
+
+<div id="supertable">
+  <div id="title">Socket Server Manager</div>
+  
+  <table style="table-layout: fixed">
+    <th>PID</th>
+    <th>READ</th>
+    <th>WRITE</th>
+    <th colspan="3">Commands</th>
+    <tr>
+      <td><%= Streammie::PID %></td>
+      <td>IO:fd <%= Streammie::RD.to_i %> <#<%= Streammie::RD.object_id %>></td>
+      <td>IO:fd <%= Streammie::WR.to_i %> <#<%= Streammie::WR.object_id %>></td>
+      <td><%= link_to "Test Message", test_message_path, remote: true %></td>
+      <td><%= link_to "Acquire Data", get_data_path, remote: true %></td>
+      <td><%= link_to "Kill", kill_slave_path, remote: true %></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,144 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #2419B2;
+}
+
+div {
+    width: 100%;
+}
+
+input, select {
+	resize: horizontal;
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	line-height:26px;
+	margin-bottom: 5px;
+}
+
+button {
+	resize: horizontal;
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+}
+
+#superheader {
+    height: 45px;
+    position: absolute;
+    top: 0px;
+    background-color: #9991FF;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    color: #FFF;
+}
+
+#superheader #title {
+	float:        left;
+	padding-top: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	width:        20%;
+	font-size: 24px;
+}
+
+#superheader #logo-ib {
+	float: right;
+	padding-right:10px;
+	padding-top: 6px;
+	width:50px;
+	height:34px;
+}
+
+#superheader #logo-ib img {
+	width: 50px;
+	height: 34px;
+}
+
+#superheader #logo-pala {
+	float: left;
+	padding-right:10px;
+	padding-top: 6px;
+	width:39%;
+	height:34px;
+}
+
+#superheader #logo-pala img {
+	width: 75px;
+	height: 34px;
+}
+
+#supercontent {
+    height: auto;
+    position: absolute;
+    top: 45px;
+}
+
+#supercontent #instructions {
+	font-size: 20px;
+	text-align:center;
+	font-family: Verdana, Geneva, sans-serif;
+	font-variant:small-caps;
+	color: #FFF;
+}
+
+#supercontent .spacer {
+	width: auto;
+	height: 5px;	
+}
+
+
+
+
+/* Portrait */
+
+@media screen and (orientation:portrait) {
+#supercontent #to_center {
+    position: relative;
+	padding-top: 45px;
+    width: 275px;
+    height: auto;
+    margin-left: auto;
+    margin-right:auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    color: #FFF;
+    text-align: center;
+	font-size: 26px;
+}
+
+#supercontent .spacer2 {
+	width: auto;
+	height: 40px;	
+}
+}
+
+/* Landscape */
+
+@media screen and (orientation:landscape) {
+
+#supercontent #to_center {
+    position: relative;
+	padding-top: 0px;
+    width: 275px;
+    height: auto;
+    margin-left: auto;
+    margin-right:auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    color: #FFF;
+    text-align: center;
+	font-size: 26px;
+}
+#supercontent .spacer2 {
+	width: auto;
+	height: 20px;	
+}
+
+}

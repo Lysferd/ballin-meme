@@ -1,0 +1,11 @@
+
+<div class="viewer" id="c<%= @camera.id %>" hidden>
+  <div class="viewerbar">
+    <div class="titleview"><%= @camera.label %></div>
+    <div class="close_button" title='<%=t :close %>' ></div>
+    <div class="max_button" title='<%=t :maximize %>' ></div>
+    <div class="tv_button" title='<%=t :send_tv %>' ></div>
+  </div>
+  <div class="video"></div>
+  <div class="pacman"><%= image_tag( 'loader.gif' ) %><p><%=t :loading %></p></div>
+</div>

@@ -1,0 +1,115 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$viewer-width: 320px;
+$viewer-height: 240px;
+$bar-height: 24px;
+
+@mixin bar-button( $button ) {
+  background-image: url( "/assets/#{$button}.png" );
+  background-repeat: no-repeat;
+  float: right;
+  margin-top: 2px;
+  margin-right: 2px;
+  height: 20px;
+  min-height: 20px;
+  
+  &:hover {
+    background-image: url( "/assets/#{$button}-hover.png" );
+  }
+
+  &:active {
+    background-image: url( "/assets/#{$button}.png" );
+  }
+}
+
+#supercontent {
+
+  #informative {
+    margin: 0px auto;
+    padding-top: 25px;
+    text-align: center;
+    
+    p {
+      padding-top: 16px;
+      
+      font-size: 20px;
+      font-family: Verdana, Geneva, sans-serif;
+      font-variant: small-caps;
+      color: #fff;
+    }
+  }
+  
+  #video_grid {
+    .viewer {
+      float: left;
+      margin-top: 8px;
+      margin-left: 8px;
+      width: $viewer-width;
+      height: $viewer-height + $bar-height;
+      background-color: #0F0A4A;
+      
+      .video {
+        position: absolute;
+        margin-top: $bar-height;
+        z-index: 2;
+      }
+      
+      .pacman {
+        position: relative;
+        margin-top: $viewer-height / 2;
+        text-align: center;
+        
+        p {
+          font-variant: small-caps;
+          font-weight: bold;
+          color: #9991FF;
+        }
+      }
+      
+      .viewerbar {
+        float: right;
+        width: 100%;
+        height: $bar-height;
+        background-color: #9991FF;
+        
+        .titleview {
+          float: left;
+          margin-left: 2px;
+          margin-top: 2px;
+          font-size: 16px;
+          text-align: left;
+          font-family: Verdana, Geneva, sans-serif;
+          font-variant: small-caps;
+          color: #FFF;
+        }
+        
+        .close_button {
+          @include bar-button( "close" );
+          width: 45px;
+          min-width: 45px;
+        }
+        
+        .max_button {
+          @include bar-button( "maximize" );
+          width: 25px;
+          min-width: 25px;
+        }
+        
+        .tv_button {
+          @include bar-button( "tv" );
+          width: 25px;
+          min-width: 25px;
+        }
+      }
+    }
+  }
+}
+
+#dev {
+  width: 320px;
+  text-align: center;
+  background-color: #5ca028;
+  font-size: small;
+}

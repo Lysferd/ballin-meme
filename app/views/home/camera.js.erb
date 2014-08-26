@@ -1,0 +1,35 @@
+
+if( !$( 'div#c<%= @camera.id %>' ).length ) {
+  
+  $( 'div#informative' ).slideUp();
+  $( 'div#video_grid' ).<%= (browser.ios? and not browser.mobile?) ? 'html' : 'append' %>('<%=j render 'viewer' %>');
+  
+  $( 'div#c<%= @camera.id %>' ).slideDown( function() {
+    $( 'div#c<%= @camera.id %> div.video' ).append( "<%= browser.ios? ? (render 'hls') : (render 'rtsp') %>" );
+  });
+  
+  $( 'div#c<%= @camera.id %> div.close_button' ).click( function() {
+    $( 'div#c<%= @camera.id %> div.video' ).remove();
+    $( 'div#c<%= @camera.id %>' ).slideUp( function() {
+      $(this).remove();
+      if ( !$('div').filter( function() { return this.id.match(/c[1-9]/); } ).length )
+        $( 'div#informative' ).slideDown();
+    });
+  });
+  
+  $( 'div#c<%= @camera.id %> div.max_button' ).click( function() {
+    <% if browser.ios? %>
+      alert( 'ios' );
+    <% else %>
+      $('#vlc')[0].video.toggleFullscreen();
+    <% end %>
+  });
+  
+  $( 'div#c<%= @camera.id %> div.tv_button' ).click( function() {
+    alert( 'SendToTV functionality under development.' );
+  });
+  
+  console.log( 'The camera #<%= @camera.id %> has been added to the grid.' );
+} else {
+  console.log( 'The camera #<%= @camera.id %> is already included in the grid.' );
+}

@@ -1,0 +1,24 @@
+<% if flash[:alert] %>
+  <div id='alert'>
+    Error: <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<div id='sform'>
+  <div class="title">Painel Administrativo</div>
+  
+  <%= form_tag do %>
+    <div class='field'>
+      <%= label_tag( :username, t( 'username' ) ) %><br>
+      <%= text_field_tag( :username, params[:username] ) %>
+    </div>
+    <div class='field'>
+      <%= label_tag( :password, t( 'password' ) ) %><br>
+      <%= password_field_tag( :password, params[:password] ) %>
+    </div>
+    <div class='actions'>
+      <%= submit_tag( t( 'login' ) ) %>
+    </div>
+  <% end %>
+  
+</div>

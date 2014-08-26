@@ -2,7 +2,11 @@
 require( 'digest/sha2' )
 
 class User < ActiveRecord::Base
-
+  
+  # -=-=-=-=-
+  # Raspberry Pi relationship.
+  has_many :raspis
+  
   # -=-=-=-=-
   # Field Validation
   validates :username, presence: true, uniqueness: true

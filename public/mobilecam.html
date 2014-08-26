@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <meta name="viewport" content="width=device-width" /> -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+
+<title>Streammie - IB Tecnologia</title>
+
+
+<link href="stylemobilepure.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="superheader">
+    <div id="logo-pala"><img src="images/logopalazzo2.png" /></a></div>
+    <div id="title">Streammie</div>
+    <div id="logo-ib"><img src="images/logoib4.png" /></a></div>
+
+</div>
+
+<div id="supercontent">
+<div id="instructions">Seja bem vindo, User.</div>
+	    <div id="to_center">
+		
+<select>
+  <option value="rtsp://developer:dev123@192.168.1.33:554/PSIA/streaming/channels/102">Portaria</option>
+  <option value="camera2">Elevador</option>
+  <option value="camera3">Garagem</option>
+  <option value="camera4">Piscina</option>
+</select>
+		 <div class="spacer"></div>
+		  <div class="spacer2"></div>
+         <button>Play</button>
+		 		 <div class="spacer"></div>
+		 <button onClick=">TV</button>
+		</div>
+video for iphone - working <br />
+	<video src="http://192.168.1.39/live33.m3u8"	controls>
+    Your browser does not support the HTML5 VIDEO.
+	</video>	
+<br />video for android - not working yet	<br />				
+	    <a href="rtsp://developer:dev123@192.168.1.33:554/PSIA/streaming/channels/102"><img src="images/close.png" border="0"
+                           alt="Video Streaming"
+                           width="40"
+                           height="30"/><br /> click X image or here
+    to play RTSP</a>
+
+</div>
+
+<br /><br /><br /><br /><br />
+
+<script type="text/javascript">
+function OnSubmitForm()
+{
+  if(document.myform.operation[0].checked == true)
+  {
+    document.myform.action =document.myform.operation[0] + "insert.html";
+	document.myform.texto.value="eca";
+  }
+  else
+  if(document.myform.operation[1].checked == true)
+  {
+    document.myform.action ="update.html";
+  }
+  return true;
+}
+</script>
+<form name="myform" onsubmit="return OnSubmitForm();">
+
+   <input type="radio" name="operation" value="1" checked>insert
+   <input type="radio" name="operation" value="2">update
+   nome: <input type="text" name="texto" /> 
+   <p>
+   <input type="submit" name="submit" value="save">
+   </p>
+</form>
+
+
+
+</div>
+	
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>Streammie</title>
+
+    <%= stylesheet_link_tag    "mobile/mobile", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "mobile", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body onLoad='document.getElementById("user").focus();'>
+    <div id="superheader">
+      <div id="logo-pala"><%= image_tag( 'logopalazzo_m.png' ) %></div>
+      <div id="title">Streammie</div>
+      <div id="logo-ib"><%= image_tag( 'logoib_m.png' ) %></div>
+    </div>
+
+  <div id="supercontent">
+    <%= yield %>
+  </div>
+
+  </body>
+</html>

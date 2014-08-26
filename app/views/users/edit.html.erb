@@ -1,12 +1,2 @@
-<div id='sform'>
-  <div class='title'><%=t :edit_user_title %></div>
-  
-  <%= render 'form' %>
-  
-  <div class='actions'>
-    <%= button_to t(:edit_but_show), @user, method: :get %>
-  </div>
-  <div class='actions'>
-    <%= button_to t(:back), users_path, method: :get %>
-  </div>
-</div>
+<%= render( "tips" ) %>
+<%= render( "form", title: :edit_user ) %>

@@ -1,0 +1,38 @@
+
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="supertable">
+  <div id="title"><%=t :raspi_list %></div>
+  <table>
+    <thead>
+      <tr>
+        <th><%=t :label %></th>
+        <th><%=t :ipv4_address %></th>
+        <th><%=t :port %></th>
+        <th><%=t :raspi_owner %></th>
+        <th><%=t :status %></th>
+        <th colspan=4><%=t :options %></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @raspis.each do |raspi| %>
+        <tr>
+          <td><%= raspi.label %></td>
+          <td><%= raspi.ipv4 %></td>
+          <td><%= raspi.port %></td>
+          <td><%= raspi.user.username %></td>
+          <td><%= raspi.status %></td>
+          <td><%= link_to "Test", send_message_path( port: raspi.port ), remote: true %></td>
+          <td><%= link_to "Reconnect", reconnect_path, port: raspi.port, remote: true %></td>
+          <td><%= link_to( t( :edit ), edit_raspi_path(raspi) ) %></td>
+          <td><%= link_to( t( :destroy ), raspi, method: :delete, data: { confirm: "Are you sure?" } ) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= button_to t(:new_raspi), new_raspi_path, method: :get %>
+  <%= button_to t(:back), admin_path, method: :get %>
+</div>

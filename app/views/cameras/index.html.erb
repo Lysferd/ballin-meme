@@ -1,35 +1,34 @@
-<div id='stable'>
 
-<div class='title'>Listing cameras</div>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Label</th>
-      <th>TCP/IPv4 Address</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th colspan=2>Options</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cameras.each do |camera| %>
+<div id="supertable">
+  <div id="title"><%=t :camera_list %></div>
+  <table>
+    <thead>
       <tr>
-        <td><%= camera.label %></td>
-        <td><%= camera.ipv4 %></td>
-        <td><%= camera.username %></td>
-        <td><%= camera.password %></td>
-        <td><%= link_to 'Edit', edit_camera_path(camera) %></td>
-        <td><%= link_to 'Destroy', camera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%=t :label %></th>
+        <th><%=t :ipv4_address %></th>
+        <th><%=t :username %></th>
+        <th><%=t :password %></th>
+        <th colspan=2><%=t :options %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= button_to( t( :new_camera ), new_camera_path, method: :get ) %>
-<%= button_to( t( :back ), admin_path, method: :get ) %>
-
+    </thead>
+    
+    <tbody>
+      <% @cameras.each do |camera| %>
+        <tr>
+          <td><%= camera.label %></td>
+          <td><%= camera.ipv4 %></td>
+          <td><%= camera.username %></td>
+          <td><%= camera.password %></td>
+          <td><%= link_to( t( :edit ), edit_camera_path(camera) ) %></td>
+          <td><%= link_to( t( :destroy ), camera, method: :delete, data: { confirm: 'Are you sure?' } ) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= button_to t(:new_camera), new_camera_path, method: :get %>
+  <%= button_to t(:back), admin_path, method: :get %>
 </div>

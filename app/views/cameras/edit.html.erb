@@ -1,8 +1,2 @@
-<div id='sform'>
-  <div class='title'>Editing camera</div>
-
-  <%= render 'form' %>
-
-  <div class='actions'><%= button_to 'Show', @camera, method: :get %></div>
-  <div class='actions'><%= button_to 'Back', cameras_path, method: :get %></div>
-</div>
+<%= render( "tips" ) %>
+<%= render( "form", title: :edit_camera ) %>

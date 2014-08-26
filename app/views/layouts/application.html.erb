@@ -2,15 +2,16 @@
 <html>
   
   <head>
-    <title>Streammie</title>
+    <title>BlueBerry Pie</title>
     <%= stylesheet_link_tag    "application/application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
   </head>
   
   <body>
     <div id="superheader">
-      <div id="title">Streammie</div>
+      <div id="berry-icon"><%= image_tag( "berrypie.png" ) %></div><div id="title">BlueBerry pie</div>
       <% if session[:user_id] %>
         <div id="login">
           <%= t( :welcome ) %>, <strong><%= User::find( session[:user_id] ).username rescue "NIL" %></strong>
@@ -31,8 +32,7 @@
     </div>
     
     <div id="superfooter">
-      <div id="copyrights"><%= session[:vlc] || "VLC NIL" %> (<%= session[:vlc].pid rescue "EMPTY" %>)</div>
-      <!--<div id="copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia & Sistemas LTDA</div>-->
+      <div id="copyrights">Streammie Alpha v0.1 © 2014 IB Tecnologia & Sistemas LTDA</div>
       <div id="qpclogo" title="QPC"><%= image_tag( "logoqpc.png" ) %></div>
       <div id="admins" title="Administration">
         <a href="<%= session[:user_id] ? admin_url : login_url %>"><%= image_tag( "key.png" ) %></a>

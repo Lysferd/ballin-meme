@@ -1,0 +1,185 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+#superheader {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 8%;
+  background-color: #9991FF;
+  font-family: Verdana, Geneva, sans-serif;
+  font-variant: small-caps;
+  color: #FFF;
+   
+  /* Application title style */
+  #title {
+    float: left;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin-right: 18px;
+    width: auto;
+    font-size: 36px;
+  }
+  
+  /* Corporation logo image */
+  #logo-ib {
+    float: right;
+    padding-right: 30px;
+    padding-top: 8px;
+    height: 100%;
+
+    img {
+      width: 56px;
+      height: 40px;
+    }
+  }
+  
+  #berry-icon {
+    float: left;
+    padding-left: 15px;
+    padding-top: 0px;
+    height: 100%;
+
+    img {
+      width: 54px;
+      height: 47px;
+    }
+  }
+  
+  #login {
+    float: left;
+    padding-top: 4px;
+    padding-left: 32px;
+    float-size: 10px;
+    text-align: left;
+  }
+
+  #options p {
+    float: left;
+    padding-left: 32px;
+    float-size: 10px;
+  }
+  
+  .button_to {
+    display: inline;
+  }
+
+  .button_to div {
+    display: inline;
+  }
+}
+
+#supercontent {
+  position:absolute;
+  left: 0px;
+  top: 8%;
+  width:100%;
+  height:86%;
+  background-color: #2419B2;
+  overflow: auto;
+
+  /* ==========================================================================
+     FORM CLASSES BEGIN
+  ========================================================================== */
+  .label {
+    position: relative;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    color: #FFF;
+  }
+  
+  #input {
+    text-align: center;
+  }
+
+  #button {
+    text-align: center;
+  }
+
+  #login {
+    position: relative;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: auto;
+    background-color: #0F0A4A;
+  }
+
+  
+}
+
+#superfooter {
+  position: absolute;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  height:6%;
+  background-color: #0F0A4A;
+
+  #copyrights {
+    float: left;
+    margin-left: 30px;
+    margin-top: 12px;
+    width: auto; //478px;
+    height: 20px;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #FFF;
+    font-size: 14px;
+  }
+
+  #qpclogo {
+    float: right;
+    margin-top: 4px;
+    width: 29px;
+    height: 29px;
+    padding-right: 10px;
+    
+    img {
+      width: 29px;
+      height: 29px;
+    }
+  }
+
+  #admins {
+    float: right;
+    margin-top: 7px;
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  #contact {
+    float: right;
+    margin-top: 7px;
+    width: 30px;
+    height: 24px;
+    padding-right: 10px;
+
+    img {
+      width: 30px;
+      height: 24px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+
+<% unless session[:user_id] %>
+  <div id="instructions">para utilizar o streammie por favor insira suas credenciais</div>
+      <div id="to_center">
+     <div class="spacer"></div>
+         <input type="text" id="user" placeholder="Usuário" autofocus/>
+     <div class="spacer"></div>
+         <input type="password" name="password" placeholder="Senha" />
+      <div class="spacer2"></div>
+         <button>Login</button>
+    </div>
+  </div>
+  
+<% else %>
+
+  <div id="instructions">Seja bem vindo, User.</div>
+  <div id="to_center">
+    <select>
+    <option value="rtsp://developer:dev123@192.168.1.33:554/PSIA/streaming/channels/102">Portaria</option>
+    <option value="camera2">Elevador</option>
+    <option value="camera3">Garagem</option>
+    <option value="camera4">Piscina</option>
+    </select>
+    <div class="spacer"></div>
+    <div class="spacer2"></div>
+    <button>Play</button>
+    <div class="spacer"></div>
+    <button>TV</button>
+  </div>
+  
+  video for iphone - working <br />
+  <video src="http://192.168.1.39/live33.m3u8"	controls>
+    Your browser does not support the HTML5 VIDEO.
+  </video>	
+  
+  <br />video for android - not working yet	<br>
+  <a href="rtsp://developer:dev123@192.168.1.33:554/PSIA/streaming/channels/102">
+  <img src="images/close.png" border="0"
+       alt="Video Streaming"
+       width="40"
+       height="30"/><br />
+  click X image or here to play RTSP</a>
+<% end %>

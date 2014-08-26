@@ -46,4 +46,4 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'passenger'
 gem 'browser'
-gem 'streammie'
+gem 'posix-spawn'

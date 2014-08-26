@@ -1,0 +1,154 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin intel_boxes {
+  position: absolute;
+  float: left;
+  text-align: center;
+  margin: 10px 10px;
+  border: 1px dotted;
+  padding: 5px;
+  width: auto;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#supercontent {
+  
+  #alert {
+    @include intel_boxes;
+    background-color: #ff0000;
+  }
+  
+  #notice {
+    @include intel_boxes;
+    background-color: #00ff00;
+    color: #000000;
+  }
+  
+  #title {
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    
+    font-size: 26px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    text-align: center;
+    
+    color: #FFF;
+    background-color: #9991FF;
+  }
+  
+  form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding-bottom: 5px;
+    
+    width: 350px;
+    height: auto;
+    color: #FFF;
+    
+    font-family: Verdana, Geneva, sans-serif;
+    font-variant: small-caps;
+    text-align: center;
+    
+    background-color: #0F0A4A;
+    
+    .field {
+      width: auto;
+      font-size: 16px;
+      
+      input {
+        width: 80%;
+        text-align: center;
+      }
+    }
+    
+    #actions {
+      margin-top: 20px;
+      
+      input {
+        display: inline;
+      }
+    }
+  }
+  
+  #supertable {
+    margin: 60px auto;
+    padding-bottom: 5px;
+    width: 50%;
+    background-color: #0F0A4A;
+    text-align: center;
+    
+    table {
+      width: 100%;
+      
+      th {
+        background-color:navy;
+        color:white;
+      }
+    
+      td {
+        background-color:white;
+        color:black;
+      }
+    }
+    
+    .button_to {
+      display: inline;
+      
+      div {
+        display: inline;
+      }
+    }
+  }
+  
+  #tips_box {
+    float: right;
+    margin-right: 130px;
+    margin-top: 30px;
+    width: 250px;
+    height: 350px;
+    
+    background-color: #0F0A4A;
+    color: #FFF;
+    
+    #title {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      width: 100%;
+      height: auto;
+      
+      background-color: #655ccd;
+      
+      font-family: Verdana, Geneva, sans-serif;
+      font-variant: small-caps;
+      text-align: center;
+    }
+    
+    .field {
+      margin-left: 5px;
+      margin-right: 5px;
+      
+      font-family: Verdana, Geneva, sans-serif;
+      font-weight: bold;
+      text-align: left;
+      font-size: 14px;
+        
+      p {
+        margin-left: 10px;
+        margin-right: 10px;
+        
+        font-weight: normal;
+        font-size: 12px;
+        text-align: justify;
+      }
+    }
+  }
+}

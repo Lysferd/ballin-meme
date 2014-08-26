@@ -1,0 +1,75 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+br:
+  username:    "Usuário"
+  password:    "Senha"
+  login:       "Login"
+  logging:     "Logando..."
+  logout:      "Deslogar"
+  confirm:     "Confirmar senha"
+  new_user:    "Novo usuário"
+  is_admin:    "Ative se for administrador"
+  loading:     "carregando..."
+  cameras:     "Câmeras"
+  add_camera:  "Adicionar câmera"
+  view_camera: "Visualizar câmera"
+  new_camera:  "Nova câmera"
+  edit_camera: "Editar câmera"
+  edit_user:   "Editar usuário"
+  adding:      "Adicionando..."
+  welcome:     "Bem-vindo"
+  back:        "Voltar"
+  new_user:    "Novo usuário"
+  login_intel: "para utilizar este serviço por favor insira suas informações na área de login e senha"
+  title_admin_panel: "Painel Adminstrativo"
+  users:       "Usuários"
+  raspis:      "Raspberry Pies"
+  alert_hls:   "Seu navegador aparenta não ter suporte/compatibilidade com HTML 5."
+  close:       "Fechar esta câmera"
+  maximize:    "Assistir em tela cheia"
+  send_tv:     "Assistir na televisão"
+  camera_label: "Rótulo da câmera"
+  camera_address: "Endereço TCP/IPv4"
+  cancel:        "Cancelar"
+  tips:          "Instruções"
+  tip_username:  "Até 4 (quatro) caracteres numéricos."
+  tip_password:  "Até 8 (oito) caracteres numéricos."
+  tip_confirm:   "Repita a senha para confirmar"
+  whitelist:     "Câmeras disponibilizadas"
+  tip_whitelist: "Lista de câmeras as quais este usuário pode visualizar. Selecione 'todas' para disponibilizar todas"
+  edit_user_title:     "Editando usuário"
+  edit_but_show:       "Mostrar"
+  new_raspi:     "Adicionar RasPi"
+  update_raspi:  "Atualizar RasPi"
+  user_privilege: "Privilégios"
+  label:         "Rótulo"
+  ipv4:         "Endereço IPv4"
+  port:         "Porta"
+  raspi_owner:  "Proprietário RasPi"
+  status:       "Status"
+  tip_camera_label:  "Rótulo da câmera para referência"
+  tcp_ipv4:      "Endereço TCP/IPv4"
+  tip_tcp_ipv4:  "Insira o endereço IP da câmera"
+  tip_rasp_name: "Insira o rótulo desta RasPi"
+  tip_raspi_owner: "Insira quem é o proprietário desta RasPi"
+ 
+  
